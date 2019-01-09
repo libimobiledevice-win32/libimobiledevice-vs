@@ -1,0 +1,14 @@
+# Local files
+.vs/
+*.user
+
+# Build output
+Win32/
+x64/
+
+# Source trees
+libplist/
+libusbmuxd/
+libimobiledevice/
+idevicerestore/
+libirecovery/
