@@ -1,0 +1,33 @@
+jobs:
+- job: windows
+  strategy:
+    maxParallel: 4
+    matrix:
+      x64:
+        BUILD_ARCH: x64
+        PLATFORM: x64
+      x86:
+        BUILD_ARCH: x86
+        PLATFORM: x86
+  pool:
+    vmImage: 'vs2017-win2016'
+  steps:
+  - script: |
+      get-source.cmd
+    displayName: Get libimobiledevice source code
+  - script: |
+      git clone https://github.com/microsoft/vcpkg
+      vcpkg\bootstrap-vcpkg.bat
+    displayName: Install vcpkg
+  - script: |
+      vcpkg\vcpkg version
+      vcpkg\vcpkg integrate install
+      set VCPKG_BUILD_TYPE=release
+      vcpkg\vcpkg install libiconv:%BUILD_ARCH%-windows zlib:%BUILD_ARCH%-windows openssl:%BUILD_ARCH%-windows dirent:%BUILD_ARCH%-windows getopt:%BUILD_ARCH%-windows curl:%BUILD_ARCH%-windows libzip:%BUILD_ARCH%-windows
+    displayName: Install dependencies
+  - task: MSBuild@1
+    inputs:
+      solution: 'libimobiledevice-vs.sln' 
+      platform: $(PLATFORM)
+      configuration: Release
+    displayName: 'Release build'
