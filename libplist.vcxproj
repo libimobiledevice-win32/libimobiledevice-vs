@@ -19,9 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="libplist\libcnary\list.c">
-      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="libplist\libcnary\node.c">
       <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
     </ClCompile>
