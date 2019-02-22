@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.168
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28606.126
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plist", "libplist.vcxproj", "{75352A45-BCB8-4774-8C66-3AF9EA6B6B42}"
 EndProject
@@ -25,6 +25,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicerestore", "idevicere
 	ProjectSection(ProjectDependencies) = postProject
 		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE} = {1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}
 	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "usbmuxd", "usbmuxd.vcxproj", "{E775C6D0-C295-4D09-9ADC-60FC95526993}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -74,6 +76,14 @@ Global
 		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x64.Build.0 = Release|x64
 		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x86.ActiveCfg = Release|Win32
 		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x86.Build.0 = Release|Win32
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Debug|x64.ActiveCfg = Debug|x64
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Debug|x64.Build.0 = Debug|x64
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Debug|x86.ActiveCfg = Debug|Win32
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Debug|x86.Build.0 = Debug|Win32
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x64.ActiveCfg = Release|x64
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x64.Build.0 = Release|x64
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x86.ActiveCfg = Release|Win32
+		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
