@@ -1,6 +1,7 @@
 # Local files
 .vs/
 *.user
+UpgradeLog.htm
 
 # Build output
 Win32/
@@ -12,3 +13,5 @@ libusbmuxd/
 libimobiledevice/
 idevicerestore/
 libirecovery/
+usbmuxd/
+ideviceinstaller/

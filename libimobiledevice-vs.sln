@@ -28,6 +28,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicerestore", "idevicere
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "usbmuxd", "usbmuxd.vcxproj", "{E775C6D0-C295-4D09-9ADC-60FC95526993}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ideviceinstaller", "ideviceinstaller.vcxproj", "{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -84,6 +86,14 @@ Global
 		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x64.Build.0 = Release|x64
 		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x86.ActiveCfg = Release|Win32
 		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x86.Build.0 = Release|Win32
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Debug|x64.ActiveCfg = Debug|x64
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Debug|x64.Build.0 = Debug|x64
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Debug|x86.ActiveCfg = Debug|Win32
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Debug|x86.Build.0 = Debug|Win32
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x64.ActiveCfg = Release|x64
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x64.Build.0 = Release|x64
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x86.ActiveCfg = Release|Win32
+		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
