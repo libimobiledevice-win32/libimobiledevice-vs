@@ -27,6 +27,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicerestore", "idevicere
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ideviceinstaller", "ideviceinstaller.vcxproj", "{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75352A45-BCB8-4774-8C66-3AF9EA6B6B42} = {75352A45-BCB8-4774-8C66-3AF9EA6B6B42}
+		{527AE686-CD0E-4BC2-9B0F-4BC4CF9621E0} = {527AE686-CD0E-4BC2-9B0F-4BC4CF9621E0}
+		{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4} = {EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
