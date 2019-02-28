@@ -10,7 +10,7 @@ jobs:
         BUILD_ARCH: x86
         PLATFORM: x86
   pool:
-    vmImage: 'vs2017-win2016'
+    vmImage: 'windows-2019'
   steps:
   - script: |
       get-source.cmd
