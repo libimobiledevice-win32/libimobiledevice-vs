@@ -127,9 +127,11 @@
   <ItemGroup>
     <ClCompile Include="libusbmuxd\common\collection.c" />
     <ClCompile Include="libusbmuxd\common\socket.c" />
+    <ClCompile Include="libusbmuxd\common\thread.c" />
     <ClCompile Include="libusbmuxd\src\libusbmuxd.c" />
     <ClInclude Include="libusbmuxd\common\collection.h" />
     <ClInclude Include="libusbmuxd\common\socket.h" />
+    <ClInclude Include="libusbmuxd\common\thread.h" />
     <ClInclude Include="libusbmuxd\include\usbmuxd-proto.h" />
     <ClInclude Include="libusbmuxd\include\usbmuxd.h" />
   </ItemGroup>
