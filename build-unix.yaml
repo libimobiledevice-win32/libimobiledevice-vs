@@ -1,0 +1,39 @@
+steps:
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+    cd libplist
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    make
+    make install
+  displayName: Build libplist
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+    cd libusbmuxd
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    make
+    make install
+  displayName: Build libusbmuxd
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+    cd libimobiledevice
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    make
+    make install
+  displayName: Build libimobiledevice
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+    cd libideviceactivation
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    make
+    make install
+  displayName: Build libideviceactivation
+- task: PublishBuildArtifacts@1
+  inputs:
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
+    artifactName: 'libimobiledevice' 
+    publishLocation: 'Container'
+  displayName: Publish
