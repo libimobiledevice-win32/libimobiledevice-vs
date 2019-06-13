@@ -63,6 +63,8 @@ jobs:
       
       copy ideviceinstaller\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\ideviceinstaller.copyright
 
+      copy libirecovery\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libirecovery.copyright
+
       REM Copy git version information
       git -C libplist rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libplist
       git -C libplist config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libplist
@@ -79,12 +81,16 @@ jobs:
       git -C ideviceinstaller rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\ideviceinstaller
       git -C ideviceinstaller config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\ideviceinstaller
 
+      git -C libirecovery rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libirecovery
+      git -C libirecovery config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libirecovery
+
       REM Get tarballs
       git -C libplist archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz
       git -C libusbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz
       git -C libimobiledevice archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libimobiledevice.orig.tar.gz
       git -C libideviceactivation archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
-      git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
+      git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ideviceinstaller.orig.tar.gz
+      git -C libirecovery archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libirecovery.orig.tar.gz
     displayName: 'Prepare artifact'
   - task: PublishBuildArtifacts@1
     inputs:

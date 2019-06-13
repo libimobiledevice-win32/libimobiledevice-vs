@@ -54,6 +54,17 @@ steps:
     make
     make install
   displayName: Build ideviceinstaller
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+      export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
+    fi
+
+    cd libirecovery
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    make
+    make install
+  displayName: Build libirecovery
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 

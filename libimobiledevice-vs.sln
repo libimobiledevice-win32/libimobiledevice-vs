@@ -143,6 +143,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		get-source.sh = get-source.sh
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libirecovery", "libirecovery.vcxproj", "{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{75352A45-BCB8-4774-8C66-3AF9EA6B6B42} = {75352A45-BCB8-4774-8C66-3AF9EA6B6B42}
+		{527AE686-CD0E-4BC2-9B0F-4BC4CF9621E0} = {527AE686-CD0E-4BC2-9B0F-4BC4CF9621E0}
+		{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4} = {EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -311,6 +318,14 @@ Global
 		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x64.Build.0 = Release|x64
 		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x86.ActiveCfg = Release|Win32
 		{10E88C2B-E98B-4EAA-AA34-9CA59136BBFD}.Release|x86.Build.0 = Release|Win32
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Debug|x64.ActiveCfg = Debug|x64
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Debug|x64.Build.0 = Debug|x64
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Debug|x86.ActiveCfg = Debug|Win32
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Debug|x86.Build.0 = Debug|Win32
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x64.ActiveCfg = Release|x64
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x64.Build.0 = Release|x64
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x86.ActiveCfg = Release|Win32
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
