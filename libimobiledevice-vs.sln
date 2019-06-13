@@ -150,6 +150,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libirecovery", "libirecover
 		{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4} = {EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicerestore", "idevicerestore.vcxproj", "{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -326,6 +328,14 @@ Global
 		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x64.Build.0 = Release|x64
 		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x86.ActiveCfg = Release|Win32
 		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}.Release|x86.Build.0 = Release|Win32
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Debug|x64.ActiveCfg = Debug|x64
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Debug|x64.Build.0 = Debug|x64
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Debug|x86.ActiveCfg = Debug|Win32
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Debug|x86.Build.0 = Debug|Win32
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x64.ActiveCfg = Release|x64
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x64.Build.0 = Release|x64
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x86.ActiveCfg = Release|Win32
+		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
