@@ -22,7 +22,7 @@
     <ProjectGuid>{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}</ProjectGuid>
     <RootNamespace>libimobiledevice</RootNamespace>
     <ProjectName>imobiledevice</ProjectName>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

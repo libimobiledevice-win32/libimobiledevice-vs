@@ -29,7 +29,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libimobiledevice\resource.h" />
-    <!-- <ResourceCompile Include="libimobiledevice\Resource.rc" /> -->
     <ClInclude Include="libimobiledevice\tools\config.h" />
   </ItemGroup>
   <ItemGroup>
@@ -40,8 +39,8 @@
   <PropertyGroup Label="Globals">
     <ProjectGuid>{D5F1A4D4-C23A-47EF-91E9-E2C08F6E31B2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>idevicebackup2</RootNamespace>
-    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <RootNamespace>$(ProjectName)</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ConfigurationType>Application</ConfigurationType>
