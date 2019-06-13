@@ -38,18 +38,18 @@ jobs:
       mkdir %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\
       mkdir %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\sources\
 
-      # Copy artifacts
+      REM Copy artifacts
       copy %PLATFORM%\Release\*.dll %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\bin\
       copy %PLATFORM%\Release\*.exe %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\bin\
       copy %PLATFORM%\Release\*.pdb %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\bin\
 
-      # Copy vcpkg licenses
+      REM Copy vcpkg licenses
       copy %VCPKG_INSTALLATION_ROOT%\installed\%BUILD_ARCH%-windows\share\libxml2\copyright %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libxml2.copyright
       copy %VCPKG_INSTALLATION_ROOT%\installed\%BUILD_ARCH%-windows\share\libiconv\copyright %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libiconv.copyright
       copy %VCPKG_INSTALLATION_ROOT%\installed\%BUILD_ARCH%-windows\share\liblzma\copyright %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\liblzma.copyright
       copy %VCPKG_INSTALLATION_ROOT%\installed\%BUILD_ARCH%-windows\share\curl\copyright %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libcurl.copyright
       
-      # Copy git licenses
+      REM Copy git licenses
       copy libplist\COPYING.LESSER %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libplist.library.copyright
       copy libplist\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libplist.utilities.copyright
       
@@ -60,8 +60,10 @@ jobs:
       
       copy libideviceactivation\COPYING.LESSER %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libideviceactivation.library.copyright
       copy libideviceactivation\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libideviceactivation.utilities.copyright
+      
+      copy ideviceinstaller\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\ideviceinstaller.copyright
 
-      # Copy git version information
+      REM Copy git version information
       git -C libplist rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libplist
       git -C libplist config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libplist
 
@@ -74,11 +76,15 @@ jobs:
       git -C libideviceactivation rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libideviceactivation
       git -C libideviceactivation config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libideviceactivation
 
-      # Get tarballs
-      git -C libplist archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/%RID%/sources/libplist.orig.tar.gz
-      git -C libusbmuxd archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz
-      git -C libimobiledevice archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/%RID%/sources/libimobiledevice.orig.tar.gz
-      git -C libideviceactivation archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
+      git -C ideviceinstaller rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\ideviceinstaller
+      git -C ideviceinstaller config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\ideviceinstaller
+
+      REM Get tarballs
+      git -C libplist archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz
+      git -C libusbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz
+      git -C libimobiledevice archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libimobiledevice.orig.tar.gz
+      git -C libideviceactivation archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
+      git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
     displayName: 'Prepare artifact'
   - task: PublishBuildArtifacts@1
     inputs:
