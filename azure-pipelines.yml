@@ -22,7 +22,7 @@ jobs:
       %VCPKG_INSTALLATION_ROOT%\vcpkg integrate install
       echo.set(VCPKG_BUILD_TYPE %CONFIGURATION%)>> %VCPKG_INSTALLATION_ROOT%\triplets\%BUILD_ARCH%-windows.cmake
       cat %VCPKG_INSTALLATION_ROOT%\triplets\%BUILD_ARCH%-windows.cmake
-      %VCPKG_INSTALLATION_ROOT%\vcpkg install libiconv:%BUILD_ARCH%-windows zlib:%BUILD_ARCH%-windows openssl:%BUILD_ARCH%-windows dirent:%BUILD_ARCH%-windows getopt:%BUILD_ARCH%-windows curl:%BUILD_ARCH%-windows libzip:%BUILD_ARCH%-windows libxml2:%BUID_ARCH%-windows
+      %VCPKG_INSTALLATION_ROOT%\vcpkg install libiconv:%BUILD_ARCH%-windows zlib:%BUILD_ARCH%-windows openssl:%BUILD_ARCH%-windows dirent:%BUILD_ARCH%-windows getopt:%BUILD_ARCH%-windows curl:%BUILD_ARCH%-windows libzip:%BUILD_ARCH%-windows libxml2:%BUILD_ARCH%-windows
     displayName: Install dependencies
   - task: MSBuild@1
     inputs:
@@ -93,9 +93,6 @@ jobs:
     RID: osx-x64
   steps:
   - script: |
-      get-source.cmd
-    displayName: Get libimobiledevice source code
-  - script: |
       brew install autoconf automake libtool pkg-config
     displayName: Install autotools
   - template: build-unix.yaml
@@ -120,7 +117,4 @@ jobs:
       sudo apt-get upgrade -y
       sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config
     displayName: Install build dependencies
-  - script: |
-      get-source.cmd
-    displayName: Get libimobiledevice source code
   - template: build-unix.yaml

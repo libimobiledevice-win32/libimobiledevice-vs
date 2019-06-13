@@ -1,4 +1,7 @@
 steps:
+  - script: |
+      ./get-source.sh
+    displayName: Get libimobiledevice source code
 - script: |
     export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
 
