@@ -90,13 +90,13 @@ jobs:
       git -C idevicerestore config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\idevicerestore
 
       REM Get tarballs
-      git -C libplist archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz
-      git -C libusbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz
-      git -C libimobiledevice archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libimobiledevice.orig.tar.gz
-      git -C libideviceactivation archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
-      git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ideviceinstaller.orig.tar.gz
-      git -C libirecovery archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libirecovery.orig.tar.gz
-      git -C idevicerestore archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/idevicerestore.orig.tar.gz
+      git -C libplist archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz HEAD
+      git -C libusbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz HEAD
+      git -C libimobiledevice archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libimobiledevice.orig.tar.gz HEAD
+      git -C libideviceactivation archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz HEAD
+      git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ideviceinstaller.orig.tar.gz HEAD
+      git -C libirecovery archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libirecovery.orig.tar.gz HEAD
+      git -C idevicerestore archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/idevicerestore.orig.tar.gz HEAD
     displayName: 'Prepare artifact'
   - task: PublishBuildArtifacts@1
     inputs:
@@ -135,6 +135,6 @@ jobs:
   - script: |
       sudo apt-get update
       sudo apt-get upgrade -y
-      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev
+      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev libusb-1.0-0-dev
     displayName: Install build dependencies
   - template: build-unix.yaml
