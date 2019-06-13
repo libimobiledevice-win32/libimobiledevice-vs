@@ -115,6 +115,6 @@ jobs:
   - script: |
       sudo apt-get update
       sudo apt-get upgrade -y
-      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git
+      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates
     displayName: Install build dependencies
   - template: build-unix.yaml
