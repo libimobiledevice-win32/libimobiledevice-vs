@@ -1,6 +1,6 @@
 # Visual Studio solution & projects for libimobiledevice
 
-[![Build Status](https://dev.azure.com/libimobiledevice-win32/imobiledevice-net/_apis/build/status/libimobiledevice-win32.libimobiledevice-vs?branchName=master)](https://dev.azure.com/libimobiledevice-win32/imobiledevice-net/_build/latest?definitionId=11?branchName=master)
+[![Build Status](https://dev.azure.com/libimobiledevice-win32/imobiledevice-net/_apis/build/status/libimobiledevice-win32.libimobiledevice-vs%20(1)?branchName=master)](https://dev.azure.com/libimobiledevice-win32/imobiledevice-net/_build/latest?definitionId=12&branchName=master)
 
 The libimobiledevice project consists of multiple libraries - such as libplist, libusbmuxd
 and libimobiledevice.
