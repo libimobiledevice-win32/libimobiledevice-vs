@@ -46,11 +46,11 @@ steps:
 - script: |
     export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-    cd libideviceinstaller
+    cd ideviceinstaller
     ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
     make
     make install
-  displayName: Build libideviceinstaller
+  displayName: Build ideviceinstaller
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
