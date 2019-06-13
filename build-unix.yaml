@@ -3,6 +3,9 @@ steps:
     ./get-source.sh
   displayName: Get libimobiledevice source code
 - script: |
+    echo $OSTYPE
+  displayName: Determining OSTYPE
+- script: |
     export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
 
     cd libplist
@@ -37,6 +40,14 @@ steps:
     make
     make install
   displayName: Build libideviceactivation
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+    cd libideviceinstaller
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    make
+    make install
+  displayName: Build libideviceinstaller
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
