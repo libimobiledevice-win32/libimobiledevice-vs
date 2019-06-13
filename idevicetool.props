@@ -22,13 +22,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="libimobiledevice\common\libgen.c" />
     <ClCompile Include="libimobiledevice\common\utils.c" />
+    <ClCompile Include="libimobiledevice\common\userpref.c" />
+    <ClCompile Include="polyfill\libgen.c" />
     <ClCompile Include="libimobiledevice\tools\$(ProjectName).c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libimobiledevice\resource.h" />
-    <ResourceCompile Include="libimobiledevice\Resource.rc" />
+    <!-- <ResourceCompile Include="libimobiledevice\Resource.rc" /> -->
     <ClInclude Include="libimobiledevice\tools\config.h" />
   </ItemGroup>
   <ItemGroup>
@@ -44,7 +45,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <ConfigurationType>Application</ConfigurationType>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)'=='Debug'">
@@ -65,14 +66,15 @@
     <ClCompile>
       <PrecompiledHeader/>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>$(ProjectDir)\libplist\include;$(ProjectDir)\libimobiledevice\;$(ProjectDir)\libimobiledevice\include;$(ProjectDir)\libimobiledevice\tools;$(ProjectDir)\libimobiledevice\common;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ProjectDir)\polyfill;$(ProjectDir)\libplist\include;$(ProjectDir)\libusbmuxd\include;$(ProjectDir)\libimobiledevice\;$(ProjectDir)\libimobiledevice\include;$(ProjectDir)\libimobiledevice\tools;$(ProjectDir)\libimobiledevice\common;$(ProjectDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>HAVE_OPENSSL;HAVE_CONFIG_H;WIN32;_CONSOLE;_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <!-- Set the source encoding and runtime encoding to UTF-8 by default. -->
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)'=='Debug'">
