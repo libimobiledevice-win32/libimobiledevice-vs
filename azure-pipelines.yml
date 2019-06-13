@@ -65,6 +65,8 @@ jobs:
 
       copy libirecovery\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libirecovery.copyright
 
+      copy idevicerestore\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\idevicerestore.copyright
+
       REM Copy git version information
       git -C libplist rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libplist
       git -C libplist config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libplist
@@ -84,6 +86,9 @@ jobs:
       git -C libirecovery rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libirecovery
       git -C libirecovery config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libirecovery
 
+      git -C idevicerestore rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\idevicerestore
+      git -C idevicerestore config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\idevicerestore
+
       REM Get tarballs
       git -C libplist archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz
       git -C libusbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz
@@ -91,6 +96,7 @@ jobs:
       git -C libideviceactivation archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz
       git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ideviceinstaller.orig.tar.gz
       git -C libirecovery archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libirecovery.orig.tar.gz
+      git -C idevicerestore archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/idevicerestore.orig.tar.gz
     displayName: 'Prepare artifact'
   - task: PublishBuildArtifacts@1
     inputs:
