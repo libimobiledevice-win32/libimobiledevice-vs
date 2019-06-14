@@ -134,6 +134,9 @@
       <Project>{ee16e7f2-ac27-4e30-ab22-b02a9c2380b4}</Project>
     </ProjectReference>
     <ProjectReference Include="libideviceactivation.vcxproj" />
+    <ProjectReference Include="libplist.vcxproj">
+      <Project>{75352a45-bcb8-4774-8c66-3af9ea6b6b42}</Project>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
