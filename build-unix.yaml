@@ -76,6 +76,17 @@ steps:
     make
     make install
   displayName: Build idevicerestore
+- script: |
+    export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+      export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
+    fi
+
+    cd usbmuxd
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --with-udevrulesdir=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/udev
+    make
+    make install
+  displayName: Build usbmuxd
 - task: PublishBuildArtifacts@1
   inputs:
     pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
