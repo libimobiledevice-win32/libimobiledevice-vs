@@ -151,6 +151,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libirecovery", "libirecover
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicerestore", "idevicerestore.vcxproj", "{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE} = {1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

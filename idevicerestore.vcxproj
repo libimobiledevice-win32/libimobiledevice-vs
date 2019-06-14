@@ -179,6 +179,9 @@
     <ProjectReference Include="imobiledevice.vcxproj">
       <Project>{ee16e7f2-ac27-4e30-ab22-b02a9c2380b4}</Project>
     </ProjectReference>
+    <ProjectReference Include="libirecovery.vcxproj">
+      <Project>{1f5b7a30-b170-4d4c-89f8-33e4a24cf9ce}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>
