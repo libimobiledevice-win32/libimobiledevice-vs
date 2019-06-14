@@ -123,6 +123,12 @@ jobs:
       export INSTALLDIR=$SYSTEM_ARTIFACTSDIRECTORY/libimobiledevice/$RID
       ./build/patchdylib.sh
     displayName: Patch dylib files
+  - task: PublishBuildArtifacts@1
+      inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
+      artifactName: 'libimobiledevice' 
+      publishLocation: 'Container'
+      displayName: Publish
 
 - job: ubuntu_xenial
   variables:
@@ -142,10 +148,17 @@ jobs:
   - script: |
       sudo apt-get update
       sudo apt-get upgrade -y
-      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev libusb-1.0-0-dev
+      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev libusb-1.0-0-dev wget
     displayName: Install build dependencies
   - template: build-unix.yaml
   - script: |
       export INSTALLDIR=$SYSTEM_ARTIFACTSDIRECTORY/libimobiledevice/$RID
       ./build/install-patchelf.sh
       ./build/run-patchelf.sh
+    displayName: Patch so files
+  - task: PublishBuildArtifacts@1
+      inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
+      artifactName: 'libimobiledevice' 
+      publishLocation: 'Container'
+      displayName: Publish

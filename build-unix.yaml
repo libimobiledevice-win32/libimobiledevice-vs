@@ -87,9 +87,3 @@ steps:
     make
     make install
   displayName: Build usbmuxd
-- task: PublishBuildArtifacts@1
-  inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
-    artifactName: 'libimobiledevice' 
-    publishLocation: 'Container'
-  displayName: Publish
