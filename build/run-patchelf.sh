@@ -22,7 +22,7 @@ for f in $INSTALLDIR/{bin/*,lib/*.so}; do
 		for solib in $solibs; do
 		    echo Patching $solib in $f
 
-		    $patchelf --replace-needed $solib $l.so
+		    $patchelf --replace-needed $solib $l.so $f
 		done
    done
 
