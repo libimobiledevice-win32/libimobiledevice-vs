@@ -166,6 +166,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tools", "tools", "{BD71AAE2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{3D82DA5A-AC7F-42CC-8F68-0B7D701C1140}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicedebugserverproxy", "idevicedebugserverproxy.vcxproj", "{9A38E78A-971B-4D7B-89F3-5A05B517EA76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -358,6 +360,14 @@ Global
 		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x64.Build.0 = Release|x64
 		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x86.ActiveCfg = Release|Win32
 		{E775C6D0-C295-4D09-9ADC-60FC95526993}.Release|x86.Build.0 = Release|Win32
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Debug|x64.ActiveCfg = Debug|x64
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Debug|x64.Build.0 = Debug|x64
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Debug|x86.ActiveCfg = Debug|Win32
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Debug|x86.Build.0 = Debug|Win32
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Release|x64.ActiveCfg = Release|x64
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Release|x64.Build.0 = Release|x64
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Release|x86.ActiveCfg = Release|Win32
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -386,6 +396,7 @@ Global
 		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE} = {3D82DA5A-AC7F-42CC-8F68-0B7D701C1140}
 		{85BB4A0B-C219-42A5-BDA1-79CF05B5A5A1} = {BD71AAE2-2013-4CBF-A6C8-8FEA7ECDC77D}
 		{E775C6D0-C295-4D09-9ADC-60FC95526993} = {BD71AAE2-2013-4CBF-A6C8-8FEA7ECDC77D}
+		{9A38E78A-971B-4D7B-89F3-5A05B517EA76} = {BD71AAE2-2013-4CBF-A6C8-8FEA7ECDC77D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {22F8E3CD-A6BA-4F08-9695-1B4A2EE751B2}
