@@ -124,7 +124,7 @@ jobs:
       ./build/patchdylib.sh
     displayName: Patch dylib files
   - task: PublishBuildArtifacts@1
-      inputs:
+    inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
       artifactName: 'libimobiledevice' 
       publishLocation: 'Container'
@@ -157,7 +157,7 @@ jobs:
       ./build/run-patchelf.sh
     displayName: Patch so files
   - task: PublishBuildArtifacts@1
-      inputs:
+    inputs:
       pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
       artifactName: 'libimobiledevice' 
       publishLocation: 'Container'
