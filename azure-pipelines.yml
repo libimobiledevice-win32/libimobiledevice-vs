@@ -145,3 +145,7 @@ jobs:
       sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev libusb-1.0-0-dev
     displayName: Install build dependencies
   - template: build-unix.yaml
+  - script: |
+      export INSTALLDIR=$SYSTEM_ARTIFACTSDIRECTORY/libimobiledevice/$RID
+      ./build/install-patchelf.sh
+      ./build/run-patchelf.sh
