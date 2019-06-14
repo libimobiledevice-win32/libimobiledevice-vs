@@ -5,9 +5,9 @@
 # in the folder where the executable is located (this will be the setup in our target
 # environment)
 for f in $INSTALLDIR/bin/* $INSTALLDIR/lib/*.dylib; do
-   for l in libplist libusbmuxd libimobiledevice libideviceactivation libirecovery; do
-     chmod +w $f
+   chmod +w $f
 
+   for l in libplist libusbmuxd libimobiledevice libideviceactivation libirecovery; do
      # Skip the first line of the otool output, this is just the header
      dylibs=`otool -L $f | tail -n +2 | grep "$l" | awk -F' ' '{ print $1 }'`
 
