@@ -9,7 +9,7 @@ jobs:
         RID: win-x64
       x86:
         BUILD_ARCH: x86
-        PLATFORM: x86
+        PLATFORM: Win32
         RID: win-x86
   pool:
     vmImage: 'windows-2019'
