@@ -87,3 +87,34 @@ steps:
     make
     make install
   displayName: Build usbmuxd
+- script: |
+    git -C libplist rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libplist
+    git -C libplist config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libplist
+
+    git -C libusbmuxd rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libusbmuxd
+    git -C libusbmuxd config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libusbmuxd
+
+    git -C libimobiledevice rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libimobiledevice
+    git -C libimobiledevice config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libimobiledevice
+
+    git -C libideviceactivation rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libideviceactivation
+    git -C libideviceactivation config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libideviceactivation
+
+    git -C ideviceinstaller rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\ideviceinstaller
+    git -C ideviceinstaller config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\ideviceinstaller
+
+    git -C libirecovery rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libirecovery
+    git -C libirecovery config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\libirecovery
+
+    git -C idevicerestore rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\idevicerestore
+    git -C idevicerestore config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY\libimobiledevice\$RID\gitinfo\idevicerestore
+  displayName: Get Git revision information
+- script: |
+    git -C libplist archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/libplist.orig.tar.gz HEAD
+    git -C libusbmuxd archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/libusbmuxd.orig.tar.gz HEAD
+    git -C libimobiledevice archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/libimobiledevice.orig.tar.gz HEAD
+    git -C libideviceactivation archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/libideviceactivation.orig.tar.gz HEAD
+    git -C ideviceinstaller archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/ideviceinstaller.orig.tar.gz HEAD
+    git -C libirecovery archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/libirecovery.orig.tar.gz HEAD
+    git -C idevicerestore archive --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/idevicerestore.orig.tar.gz HEAD
+  displayName: Archive sources
