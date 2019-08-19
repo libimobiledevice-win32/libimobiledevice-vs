@@ -58,6 +58,8 @@ jobs:
       copy libimobiledevice\COPYING.LESSER %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libimobiledevice.library.copyright
       copy libimobiledevice\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libimobiledevice.utilities.copyright
       
+      copy usbmuxd\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\usbmuxd.copyright
+
       copy libideviceactivation\COPYING.LESSER %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libideviceactivation.library.copyright
       copy libideviceactivation\COPYING %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\licenses\libideviceactivation.utilities.copyright
       
@@ -77,6 +79,9 @@ jobs:
       git -C libimobiledevice rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libimobiledevice
       git -C libimobiledevice config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libimobiledevice
 
+      git -C usbmuxd rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\usbmuxd
+      git -C usbmuxd config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\usbmuxd
+
       git -C libideviceactivation rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libideviceactivation
       git -C libideviceactivation config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\libideviceactivation
 
@@ -93,6 +98,7 @@ jobs:
       git -C libplist archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz HEAD
       git -C libusbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz HEAD
       git -C libimobiledevice archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libimobiledevice.orig.tar.gz HEAD
+      git -C usbmuxd archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/usbmuxd.orig.tar.gz HEAD
       git -C libideviceactivation archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libideviceactivation.orig.tar.gz HEAD
       git -C ideviceinstaller archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ideviceinstaller.orig.tar.gz HEAD
       git -C libirecovery archive --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libirecovery.orig.tar.gz HEAD
