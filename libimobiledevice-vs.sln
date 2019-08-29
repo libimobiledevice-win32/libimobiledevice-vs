@@ -160,6 +160,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libraries", "libraries", "{3D82DA5A-AC7F-42CC-8F68-0B7D701C1140}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "idevicedebugserverproxy", "idevicedebugserverproxy.vcxproj", "{D5F1A4D4-C23A-47EF-91E9-E2C08F6E31B2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4} = {EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ideviceactivation", "libideviceactivation.vcxproj", "{6F22FD3C-EAC0-4BF0-A7DE-3B92695666EB}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -190,10 +193,19 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "plistutil", "plistutil.vcxp
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "iproxy", "iproxy.vcxproj", "{64C34ED6-EC5F-4690-B91D-393444071601}"
+	ProjectSection(ProjectDependencies) = postProject
+		{527AE686-CD0E-4BC2-9B0F-4BC4CF9621E0} = {527AE686-CD0E-4BC2-9B0F-4BC4CF9621E0}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "irecovery", "irecovery.vcxproj", "{E6694D68-7D6C-4540-9833-E90B535B0CD3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE} = {1F5B7A30-B170-4D4C-89F8-33E4A24CF9CE}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ideviceenterrecovery", "ideviceenterrecovery.vcxproj", "{52C80793-81E2-408E-BF45-6140BBED11E7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4} = {EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
