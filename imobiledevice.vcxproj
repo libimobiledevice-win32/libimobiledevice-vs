@@ -149,6 +149,7 @@
     <ClInclude Include="libimobiledevice\include\libimobiledevice\mobilesync.h" />
     <ClInclude Include="libimobiledevice\include\libimobiledevice\mobile_image_mounter.h" />
     <ClInclude Include="libimobiledevice\include\libimobiledevice\notification_proxy.h" />
+    <ClInclude Include="libimobiledevice\include\libimobiledevice\preboard.h" />
     <ClInclude Include="libimobiledevice\include\libimobiledevice\property_list_service.h" />
     <ClInclude Include="libimobiledevice\include\libimobiledevice\restore.h" />
     <ClInclude Include="libimobiledevice\include\libimobiledevice\sbservices.h" />
@@ -175,6 +176,7 @@
     <ClInclude Include="libimobiledevice\src\msc_compat.h" />
     <ClInclude Include="libimobiledevice\src\msc_config.h" />
     <ClInclude Include="libimobiledevice\src\notification_proxy.h" />
+    <ClInclude Include="libimobiledevice\src\preboard.h" />
     <ClInclude Include="libimobiledevice\src\property_list_service.h" />
     <ClInclude Include="libimobiledevice\src\restore.h" />
     <ClInclude Include="libimobiledevice\src\sbservices.h" />
@@ -205,6 +207,7 @@
     <ClCompile Include="libimobiledevice\src\mobile_image_mounter.c" />
     <ClCompile Include="libimobiledevice\src\notification_proxy.c" />
     <ClCompile Include="libimobiledevice\src\pinvoke.c" />
+    <ClCompile Include="libimobiledevice\src\preboard.c" />
     <ClCompile Include="libimobiledevice\src\property_list_service.c" />
     <ClCompile Include="libimobiledevice\src\restore.c" />
     <ClCompile Include="libimobiledevice\src\sbservices.c" />
