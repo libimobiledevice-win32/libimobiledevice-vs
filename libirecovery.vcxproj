@@ -119,6 +119,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="libirecovery\src\libirecovery.c" />
+    <ClCompile Include="libirecovery\src\thread.c" />
+    <ClCompile Include="libirecovery\src\utils.c" />
     <ClInclude Include="libirecovery\include\libirecovery.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
