@@ -120,6 +120,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="idevicerestore\src\ftab.c" />
     <ClCompile Include="polyfill\libgen.c" />
     <ClCompile Include="idevicerestore\src\asr.c" />
     <ClCompile Include="idevicerestore\src\common.c" />
