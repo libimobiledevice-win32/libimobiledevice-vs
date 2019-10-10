@@ -22,7 +22,7 @@ jobs:
       %VCPKG_INSTALLATION_ROOT%\vcpkg integrate install
       echo.set(VCPKG_BUILD_TYPE %CONFIGURATION%)>> %VCPKG_INSTALLATION_ROOT%\triplets\%BUILD_ARCH%-windows.cmake
       cat %VCPKG_INSTALLATION_ROOT%\triplets\%BUILD_ARCH%-windows.cmake
-      %VCPKG_INSTALLATION_ROOT%\vcpkg install libiconv:%BUILD_ARCH%-windows zlib:%BUILD_ARCH%-windows openssl:%BUILD_ARCH%-windows dirent:%BUILD_ARCH%-windows getopt:%BUILD_ARCH%-windows curl:%BUILD_ARCH%-windows libzip:%BUILD_ARCH%-windows libxml2:%BUILD_ARCH%-windows libusb:%BUILD_ARCH%-windows libusb-win32:%BUILD_ARCH%-windows pthreads:%BUILD_ARCH%-windows readline:%BUILD_ARCH%-windows
+      %VCPKG_INSTALLATION_ROOT%\vcpkg install libiconv:%BUILD_ARCH%-windows zlib:%BUILD_ARCH%-windows openssl:%BUILD_ARCH%-windows dirent:%BUILD_ARCH%-windows getopt:%BUILD_ARCH%-windows curl:%BUILD_ARCH%-windows libzip:%BUILD_ARCH%-windows libxml2:%BUILD_ARCH%-windows libusb:%BUILD_ARCH%-windows libusb-win32:%BUILD_ARCH%-windows pthreads:%BUILD_ARCH%-windows readline:%BUILD_ARCH%-windows pcre:%BUILD_ARCH%-windows
       dir %VCPKG_INSTALLATION_ROOT%\installed\%BUILD_ARCH%-windows\bin\
       dir %VCPKG_INSTALLATION_ROOT%\installed\%BUILD_ARCH%-windows\lib\
     displayName: Install dependencies
@@ -94,6 +94,9 @@ jobs:
       git -C idevicerestore rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\idevicerestore
       git -C idevicerestore config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\idevicerestore
 
+      git -C ios-webkit-debug-proxy rev-parse HEAD >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\ios-webkit-debug-proxy
+      git -C ios-webkit-debug-proxy config --get remote.origin.url >>  %BUILD_ARTIFACTSTAGINGDIRECTORY%\libimobiledevice\%RID%\gitinfo\ios-webkit-debug-proxy
+
       REM Get tarballs
       git -C libplist archive --prefix=libplist/ --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libplist.orig.tar.gz HEAD
       git -C libusbmuxd archive --prefix=libusbmuxd/ --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libusbmuxd.orig.tar.gz HEAD
@@ -103,6 +106,7 @@ jobs:
       git -C ideviceinstaller archive --prefix=ideviceinstaller/ --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ideviceinstaller.orig.tar.gz HEAD
       git -C libirecovery archive --prefix=libirecovery/ --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/libirecovery.orig.tar.gz HEAD
       git -C idevicerestore archive --prefix=idevicerestore/ --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/idevicerestore.orig.tar.gz HEAD
+      git -C idevicerestore archive --prefix=ios-webkit-debug-proxy/ --format tar.gz -o %BUILD_ARTIFACTSTAGINGDIRECTORY%/libimobiledevice/%RID%/sources/ios-webkit-debug-proxy.orig.tar.gz HEAD
     displayName: 'Prepare artifact'
   - task: PublishBuildArtifacts@1
     inputs:
