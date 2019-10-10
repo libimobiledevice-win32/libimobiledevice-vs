@@ -86,7 +86,7 @@ steps:
     ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --with-udevrulesdir=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/udev --without-systemd
     make
     make install
-  displayName: Build ios-webkit-debug-proxy
+  displayName: Build usbmuxd
 - script: |
     export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
     if [[ "$OSTYPE" == "darwin"* ]]; then
@@ -97,7 +97,7 @@ steps:
     ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET
     make
     make install
-  displayName: Build usbmuxd
+  displayName: Build ios-webkit-debug-proxy
 - script: |
     mkdir -p $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/gitinfo/
     git -C libplist rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/gitinfo/libplist
