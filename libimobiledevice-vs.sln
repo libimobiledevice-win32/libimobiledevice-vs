@@ -208,6 +208,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ideviceenterrecovery", "ide
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ios_webkit_debug_proxy", "ios_webkit_debug_proxy.vcxproj", "{B3202DE4-A933-46D3-B268-9C2156ECCAF6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EE16E7F2-AC27-4E30-AB22-B02A9C2380B4} = {EE16E7F2-AC27-4E30-AB22-B02A9C2380B4}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
