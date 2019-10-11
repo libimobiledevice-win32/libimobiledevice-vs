@@ -25,7 +25,7 @@ To install vcpkg and the dependencies, run:
 git clone https://github.com/microsoft/vcpkg
 vcpkg\bootstrap-vcpkg.bat
 vcpkg\vcpkg integrate install
-vcpkg\vcpkg install libiconv:%BUILD_ARCH%-windows zlib:%BUILD_ARCH%-windows openssl:%BUILD_ARCH%-windows dirent:%BUILD_ARCH%-windows getopt:%BUILD_ARCH%-windows curl:%BUILD_ARCH%-windows libzip:%BUILD_ARCH%-windows
+vcpkg\vcpkg install libiconv:x64-windows zlib:x64-windows openssl:x64-windows dirent:x64-windows getopt:x64-windows curl:x64-windows libzip:x64-windows libxml2:x64-windows libusb:x64-windows libusb-win32:x64-windows pthreads:x64-windows readline:x64-windows pcre:x64-windows
 ```
 
 To get the libmobiledevice source code, run:
