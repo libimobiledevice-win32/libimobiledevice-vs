@@ -8,6 +8,12 @@ git clone --single-branch --branch msvc/master https://github.com/libimobiledevi
 git clone --single-branch --branch master-msvc https://github.com/libimobiledevice-win32/usbmuxd
 git clone --single-branch --branch msvc/master https://github.com/libimobiledevice-win32/ios-webkit-debug-proxy
 
+# git -C is not available on CentOS 7
+if [ -f /etc/redhat-release ] && [ $(rpm -q --queryformat '%{VERSION}' centos-release) == "7" ]
+then
+    exit 0
+fi
+
 echo "libplist revision:"
 git -C libplist rev-parse HEAD
 
