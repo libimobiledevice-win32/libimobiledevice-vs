@@ -180,3 +180,48 @@ jobs:
       artifactName: 'libimobiledevice' 
       publishLocation: 'Container'
       displayName: Publish
+
+- job: rhel
+  strategy:
+    maxParallel: 4
+    matrix:
+      fedora_29:
+        imageName: fedora:29
+        rid: fedora.29-x64
+      fedora_30:
+        imageName: fedora:30
+        rid: fedora.30-x64
+      centos_7:
+        imageName: centos:7
+        rid: centos.7-x64
+      centos_8:
+        imageName: centos:8
+        rid: centos.8-x64
+  variables:
+    TARGET: x86_64-unknown-linux-gnu
+    CFLAGS: -fPIC
+  pool:
+    vmImage: 'ubuntu-16.04'
+  container:
+    image: $(imageName)
+    options: "--name ci-container -v /usr/bin/docker:/tmp/docker:ro"
+  steps:
+  - script: |
+      /tmp/docker exec -t -u 0 ci-container \
+      sh -c "yum install -y sudo"
+    displayName: Set up sudo
+  - script: |
+      sudo yum install -y libtool automake make gcc gcc-c++ git openssl-devel libusbx-devel glib2-devel readline-devel glibc-devel zlib-devel libzip-devel libcurl-devel libxml2-devel
+    displayName: Install build dependencies
+  - template: build-unix.yaml
+  - script: |
+      export INSTALLDIR=$SYSTEM_ARTIFACTSDIRECTORY/libimobiledevice/$RID
+      ./build/install-patchelf.sh
+      ./build/run-patchelf.sh
+    displayName: Patch so files
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathtoPublish: '$(Build.ArtifactStagingDirectory)/libimobiledevice' 
+      artifactName: 'libimobiledevice' 
+      publishLocation: 'Container'
+      displayName: Publish

@@ -61,7 +61,7 @@ steps:
     fi
 
     cd libirecovery
-    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
+    ./autogen.sh --prefix=$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID --without-udev --host=$TARGET --without-cython --enable-static=no --enable-shared=yes
     make
     make install
   displayName: Build libirecovery
