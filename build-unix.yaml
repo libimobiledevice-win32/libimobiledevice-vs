@@ -127,6 +127,7 @@ steps:
     git -C ios-webkit-debug-proxy rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/gitinfo/ios-webkit-debug-proxy
     git -C ios-webkit-debug-proxy config --get remote.origin.url >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/gitinfo/ios-webkit-debug-proxy
   displayName: Get Git revision information
+  condition: not(eq(variables['rid'], 'centos.7-x64'))
 - script: |
     mkdir -p $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/
     git -C libplist archive --prefix=libplist/ --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/libplist.orig.tar.gz HEAD
@@ -139,3 +140,4 @@ steps:
     git -C idevicerestore archive --prefix=idevicerestore/ --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/idevicerestore.orig.tar.gz HEAD
     git -C ios-webkit-debug-proxy archive --prefix=ios-webkit-debug-proxy/ --format tar.gz -o $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sources/ios-webkit-debug-proxy.orig.tar.gz HEAD
   displayName: Archive sources
+  condition: not(eq(variables['rid'], 'centos.7-x64'))
