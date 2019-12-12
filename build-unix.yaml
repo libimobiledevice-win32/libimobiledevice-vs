@@ -98,6 +98,9 @@ steps:
     make
     make install
   displayName: Build ios-webkit-debug-proxy
+- publish: $(Build.SourcesDirectory)
+  artifact: sources-$(rid)
+  condition: always()
 - script: |
     mkdir -p $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/gitinfo/
     git -C libplist rev-parse HEAD >> $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/gitinfo/libplist
