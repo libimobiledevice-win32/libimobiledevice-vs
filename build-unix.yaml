@@ -77,6 +77,7 @@ steps:
     make install
   displayName: Build idevicerestore
 - script: |
+    export CPATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/include"
     export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
     if [[ "$OSTYPE" == "darwin"* ]]; then
       export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
@@ -88,6 +89,7 @@ steps:
     make install
   displayName: Build usbmuxd
 - script: |
+    export CPATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/include"
     export PKG_CONFIG_PATH="$BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/pkgconfig:$PKG_CONFIG_PATH"
     if [[ "$OSTYPE" == "darwin"* ]]; then
       export PKG_CONFIG_PATH="$(brew --prefix)/opt/openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
