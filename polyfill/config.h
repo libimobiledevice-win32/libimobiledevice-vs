@@ -2,6 +2,7 @@
 
 #define SSIZE_T ssize_t
 
+#define PACKAGE_BUGREPORT "https://github.com/libimobiledevice-win32/libimobiledevice-vs/"
 #define PACKAGE_URL "https://github.com/libimobiledevice-win32/libimobiledevice-vs/"
 #define PACKAGE_VERSION "1.0.0"
 
