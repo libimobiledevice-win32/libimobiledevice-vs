@@ -117,7 +117,7 @@ jobs:
 
 - job: macos
   pool:
-    vmImage: 'xcode9-macos10.13'
+    vmImage: 'macos-10.14'
   variables:
     TARGET: x86_64-apple-darwin
     RID: osx-x64
