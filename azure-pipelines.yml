@@ -150,6 +150,9 @@ jobs:
       ubuntu_1804:
         imageName: ubuntu:18.04
         rid: ubuntu.18.04-x64
+      ubuntu_2004:
+        imageName: ubuntu:20.04
+        rid: ubuntu.20.04-x64
   variables:
     TARGET: x86_64-unknown-linux-gnu
     CFLAGS: -fPIC
