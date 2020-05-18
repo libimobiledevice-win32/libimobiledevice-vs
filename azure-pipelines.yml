@@ -169,7 +169,7 @@ jobs:
   - script: |
       sudo apt-get update
       sudo apt-get upgrade -y
-      sudo apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev libusb-1.0-0-dev wget
+      sudo DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends lsb-release automake make libtool clang libssl-dev gnupg pkg-config git ca-certificates libcurl4-openssl-dev libxml2-dev libzip-dev libreadline-dev libusb-1.0-0-dev wget
     displayName: Install build dependencies
   - template: build-unix.yaml
   - script: |
