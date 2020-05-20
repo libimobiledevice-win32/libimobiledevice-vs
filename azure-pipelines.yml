@@ -17,6 +17,16 @@ jobs:
   - script: |
       get-source.cmd
     displayName: Get libimobiledevice source code
+  - task: Cache@2
+    inputs:
+      key: 'vcpkg_downloads | $(RID)'
+      path: "C:/vcpkg/downloads"
+    displayName: Cache VCPKG downloads
+  - task: Cache@2
+    inputs:
+      key: 'vcpkg_installed | $(RID)'
+      path: "C:/vcpkg/installed"
+    displayName: Cache VCPKG installed packages
   - script: |
       %VCPKG_INSTALLATION_ROOT%\vcpkg version
       %VCPKG_INSTALLATION_ROOT%\vcpkg integrate install
