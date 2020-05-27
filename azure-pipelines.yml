@@ -1,3 +1,51 @@
+resources:
+  repositories:
+  - repository: libplist
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/libplist
+    ref: msvc/master
+  - repository: libusbmuxd
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/libusbmuxd
+    ref: msvc/master
+  - repository: libimobiledevice
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/libimobiledevice
+    ref: msvc/master
+  - repository: libideviceactivation
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/libideviceactivation
+    ref: msvc/master
+  - repository: ideviceinstaller
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/ideviceinstaller
+    ref: msvc/master
+  - repository: libirecovery
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/libirecovery
+    ref: msvc/master
+  - repository: idevicerestore
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/idevicerestore
+    ref: msvc/master
+  - repository: usbmuxd
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/usbmuxd
+    ref: master-msvc
+  - repository: ios-webkit-debug-proxy
+    type: github
+    endpoint: libimobiledevice-win32
+    name: libimobiledevice-win32/ios-webkit-debug-proxy
+    ref: msvc/master
+
 jobs:
 - job: windows
   strategy:
@@ -14,9 +62,7 @@ jobs:
   pool:
     vmImage: 'windows-2019'
   steps:
-  - script: |
-      get-source.cmd
-    displayName: Get libimobiledevice source code
+  - template: get-source.yaml
   - task: Cache@2
     inputs:
       key: 'vcpkg_downloads | $(RID)'
@@ -132,6 +178,7 @@ jobs:
     TARGET: x86_64-apple-darwin
     RID: osx-x64
   steps:
+  - template: get-source.yaml
   - script: |
       brew install autoconf automake libtool pkg-config libzip libusb
     displayName: Install autotools
@@ -172,6 +219,7 @@ jobs:
     image: $(imageName)
     options: "--name ci-container -v /usr/bin/docker:/tmp/docker:ro"
   steps:
+  - template: get-source.yaml
   - script: |
       /tmp/docker exec -t -u 0 ci-container \
       sh -c "apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confold" -y install sudo"
@@ -219,6 +267,7 @@ jobs:
     image: $(imageName)
     options: "--name ci-container -v /usr/bin/docker:/tmp/docker:ro"
   steps:
+  - template: get-source.yaml
   - script: |
       /tmp/docker exec -t -u 0 ci-container \
       sh -c "yum install -y sudo"

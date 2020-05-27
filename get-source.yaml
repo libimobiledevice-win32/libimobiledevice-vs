@@ -1,0 +1,34 @@
+# This does not work (properly) when running a container job; see
+# https://github.com/microsoft/azure-pipelines-tasks/issues/12844
+# for more information
+steps:
+- checkout: self
+  path: s
+  target: host
+- checkout: libplist
+  path: s/libplist
+  target: host
+- checkout: libusbmuxd
+  path: s/libusbmuxd
+  target: host
+- checkout: libimobiledevice
+  path: s/libimobiledevice
+  target: host
+- checkout: libideviceactivation
+  path: s/libideviceactivation
+  target: host
+- checkout: ideviceinstaller
+  path: s/ideviceinstaller
+  target: host
+- checkout: libirecovery
+  path: s/libirecovery
+  target: host
+- checkout: idevicerestore
+  path: s/idevicerestore
+  target: host
+- checkout: usbmuxd
+  path: s/usbmuxd
+  target: host
+- checkout: ios-webkit-debug-proxy
+  path: s/ios-webkit-debug-proxy
+  target: host
