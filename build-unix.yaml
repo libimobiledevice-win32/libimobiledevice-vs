@@ -1,8 +1,5 @@
 steps:
 - script: |
-    ./get-source.sh
-  displayName: Get libimobiledevice source code
-- script: |
     echo $OSTYPE
   displayName: Determining OSTYPE
 - script: |
