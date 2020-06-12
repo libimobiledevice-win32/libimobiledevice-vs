@@ -4,6 +4,7 @@
 
 #define PACKAGE_BUGREPORT "https://github.com/libimobiledevice-win32/libimobiledevice-vs/"
 #define PACKAGE_URL "https://github.com/libimobiledevice-win32/libimobiledevice-vs/"
+#define PACKAGE_NAME "libimobiledevice-win32"
 #define PACKAGE_VERSION "1.0.0"
 
 #define S_IFIFO _S_IFIFO
