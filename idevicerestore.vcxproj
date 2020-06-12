@@ -121,6 +121,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="idevicerestore\src\ftab.c" />
+    <ClCompile Include="idevicerestore\src\sha1.c" />
     <ClCompile Include="polyfill\libgen.c" />
     <ClCompile Include="idevicerestore\src\asr.c" />
     <ClCompile Include="idevicerestore\src\common.c" />
@@ -167,6 +168,7 @@
     <ClInclude Include="idevicerestore\src\normal.h" />
     <ClInclude Include="idevicerestore\src\recovery.h" />
     <ClInclude Include="idevicerestore\src\restore.h" />
+    <ClInclude Include="idevicerestore\src\sha1.h" />
     <ClInclude Include="idevicerestore\src\socket.h" />
     <ClInclude Include="idevicerestore\src\thread.h" />
     <ClInclude Include="idevicerestore\src\tss.h" />
