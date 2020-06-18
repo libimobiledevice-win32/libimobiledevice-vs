@@ -1,0 +1,10 @@
+steps:
+- script: |
+    set -e
+    $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/bin/iproxy --help
+    $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/bin/idevice_id --help
+    $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/bin/ideviceactivation --help
+    $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sbin/usbmuxd --help
+    $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/bin/ideviceinstaller --help
+    $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/bin/irecovery
+  displayName: Test executables
