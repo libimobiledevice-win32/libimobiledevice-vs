@@ -7,7 +7,7 @@
 for f in $INSTALLDIR/bin/* $INSTALLDIR/lib/*.dylib; do
    chmod +w $f
 
-   for l in libplist libusbmuxd libimobiledevice libideviceactivation libirecovery libssl.1.0.0 libcrypto.1.0.0; do
+   for l in libplist libusbmuxd libimobiledevice-1.0 libideviceactivation libirecovery libssl.1.0.0 libcrypto.1.0.0; do
      # Skip the first line of the otool output, this is just the header
      dylibs=`otool -L $f | tail -n +2 | grep "$l" | awk -F' ' '{ print $1 }'`
 
