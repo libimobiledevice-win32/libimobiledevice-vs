@@ -16,7 +16,7 @@ for f in $INSTALLDIR/{bin/*,lib/*.so}; do
    
 	$patchelf --set-rpath '${ORIGIN}' $f
 
-	for l in libplist libusbmuxd libimobiledevice libideviceactivation libirecovery; do
+	for l in libplist-2.0 libusbmuxd libimobiledevice-1.0 libideviceactivation-1.0 libirecovery-1.0; do
 		# Skip the first line of the otool output, this is just the header
 		solibs=`$patchelf --print-needed $f | grep "$l"`
 		for solib in $solibs; do
