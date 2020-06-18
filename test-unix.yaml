@@ -6,7 +6,7 @@ steps:
 
     cp $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/bin/* .
     cp $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/sbin/* .
-    cp -r $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/* .
+    cp $BUILD_ARTIFACTSTAGINGDIRECTORY/libimobiledevice/$RID/lib/lib* .
 
     ls -l .
 
