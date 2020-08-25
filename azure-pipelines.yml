@@ -74,6 +74,13 @@ jobs:
       path: "C:/vcpkg/installed"
     displayName: Cache VCPKG installed packages
   - script: |
+      git pull
+      vcpkg.exe version
+      bootstrap-vcpkg.bat
+      vcpkg.exe upgrade --no-dry-run
+    displayName: Update vcpkg and packages
+    workingDirectory: C:/vcpkg
+  - script: |
       %VCPKG_INSTALLATION_ROOT%\vcpkg version
       %VCPKG_INSTALLATION_ROOT%\vcpkg integrate install
       echo.set(VCPKG_BUILD_TYPE %CONFIGURATION%)>> %VCPKG_INSTALLATION_ROOT%\triplets\%BUILD_ARCH%-windows.cmake
