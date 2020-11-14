@@ -41,6 +41,13 @@ get-source.cmd
 
 You can now open the `libimobiledevice-vs.sln` solution and start compiling libimobiledevice.
 
+if you compile with visual studio 2017, some probleam as: pls refer wiki
+* The following VS instances are excluded because the English language pack is unavailable.
+* Error MSB8020 The build tools for v142 (Platform Toolset = 'v142') cannot be found.
+
+
+
+
 ## Consulting, Training and Support
 
 This repository is maintained by [Quamotion](http://quamotion.mobi). Quamotion develops test software for iOS and Android applications, based on the WebDriver protocol.
