@@ -28,8 +28,13 @@ vcpkg\vcpkg integrate install
 vcpkg\vcpkg install libiconv:x64-windows zlib:x64-windows openssl:x64-windows dirent:x64-windows getopt:x64-windows curl:x64-windows libzip:x64-windows libxml2:x64-windows libusb:x64-windows libusb-win32:x64-windows pthreads:x64-windows readline:x64-windows pcre:x64-windows
 ```
 
-To get the libmobiledevice source code, run:
+To get the libmobiledevice source code
+```
+git clone https://github.com/libimobiledevice-win32/libimobiledevice-vs
+cd libimobiledevice-vs
+```
 
+then run:
 ```
 get-source.cmd
 ```
