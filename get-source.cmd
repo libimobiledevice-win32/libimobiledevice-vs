@@ -7,6 +7,8 @@ git clone --single-branch --branch msvc/master https://github.com/libimobiledevi
 git clone --single-branch --branch msvc/master https://github.com/libimobiledevice-win32/idevicerestore
 git clone --single-branch --branch master-msvc https://github.com/libimobiledevice-win32/usbmuxd
 git clone --single-branch --branch msvc/master https://github.com/libimobiledevice-win32/ios-webkit-debug-proxy
+git clone --single-branch --branch msvc/master https://github.com/stijnvdb88/ifuse
+git clone --single-branch --branch master https://github.com/dokan-dev/dokany
 
 echo "libplist revision:"
 git -C libplist rev-parse HEAD

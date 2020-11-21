@@ -50,3 +50,7 @@
 #ifndef strcasecmp
 #define strcasecmp _stricmp
 #endif
+
+#ifndef O_ACCMODE
+#define O_ACCMODE     (_O_RDONLY | _O_WRONLY | _O_RDWR)
+#endif
