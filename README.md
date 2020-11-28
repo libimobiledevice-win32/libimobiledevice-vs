@@ -28,13 +28,25 @@ vcpkg\vcpkg integrate install
 vcpkg\vcpkg install libiconv:x64-windows zlib:x64-windows openssl:x64-windows dirent:x64-windows getopt:x64-windows curl:x64-windows libzip:x64-windows libxml2:x64-windows libusb:x64-windows libusb-win32:x64-windows pthreads:x64-windows readline:x64-windows pcre:x64-windows
 ```
 
-To get the libmobiledevice source code, run:
+To get the libmobiledevice source code
+```
+git clone https://github.com/libimobiledevice-win32/libimobiledevice-vs
+cd libimobiledevice-vs
+```
 
+then run:
 ```
 get-source.cmd
 ```
 
 You can now open the `libimobiledevice-vs.sln` solution and start compiling libimobiledevice.
+
+if you compile with visual studio 2017, some probleam as: pls refer wiki
+* The following VS instances are excluded because the English language pack is unavailable.
+* Error MSB8020 The build tools for v142 (Platform Toolset = 'v142') cannot be found.
+
+
+
 
 ## Consulting, Training and Support
 
